@@ -16,6 +16,21 @@
   @media (min-width: 1800px) { @content; }
 }
 
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin nextImageFill {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+  }
+}
+
 // // usage
 // .my-box {
 //   padding: 10px;
