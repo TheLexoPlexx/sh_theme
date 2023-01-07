@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import "../styles/vars.scss";
+//vars-import ganz unten zum überschreiben
 
 :root {
 	//s&h colors
@@ -14,19 +14,16 @@
 	--primary: var(--sh-blue);
 	--secondary: #222;
 
-	--paragraph-color: #444; //Content
-	--header-color: #555; //Headers
-	--gray-3: #bbb;
+	--paragraph: var(--secondary); //body > p, buttons
+	--header: #555; //h1, h2, h3, h4, h5, h6, hr, strong, b, textarea, label
+	--sub: #bbb; //subtitles, disabled und placeholders
 
-  --white: #fff; //weiß
-  --black: #000; //Schwarz
+  --primary-contrast: #fff; //weiß
 
-	--light-bg: #f2f2f2;
+	--background: #f2f2f2; //background color
 
-	--form-background: rgbax(144, 144, 144, 0.075);
-	--form-border: rgbax(144, 144, 144, 0.25)
-
-	--background: var(--white);
+	--form-background: rgba(200, 200, 200, 0.25);
+	--form-border: rgba(70, 70, 70, 0.25);
 
   // body font size
   --text-base-size: 1em;
@@ -129,7 +126,7 @@ html {
 }
 
 body {
-	color: var(--paragraph-color);
+	color: var(--paragraph);
 }
 
 body,
@@ -190,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.5;
 	margin: 0 0 1rem 0;
 	font-family: var(--font-hx);
-	color: var(--header-color);
+	color: var(--header);
 
 	a {
 		color: inherit;
@@ -268,7 +265,7 @@ pre {
 
 hr {
 	border: 0;
-	border-bottom: solid 1px var(--header-color);
+	border-bottom: solid 1px var(--header);
 	margin: 2rem 0;
 
 	&.major {
@@ -279,12 +276,12 @@ hr {
 input,
 select,
 textarea {
-	color: var(--header-color);
+	color: var(--header);
 }
 
 strong,
 b {
-	color: var(--header-color);
+	color: var(--header);
 }
 
 blockquote {
@@ -323,13 +320,13 @@ button,
 	text-decoration: none;
 	text-transform: uppercase;
 	white-space: nowrap;
-	background-color: var(--light-bg);
-	color: var(--black); //!important
+	background-color: var(--form-background);
+	color: var(--paragraph); //!important
 
 	--alt-box-shadow: inset 0 0 0 3px;
 
 	&:disabled {
-		color: var(--gray-3);
+		color: var(--sub);
 		cursor: not-allowed;
 	}
 	
@@ -366,7 +363,7 @@ button,
 
 	&.special {
 		background-color: var(--primary);
-		color: var(--white) !important;
+		color: var(--primary-contrast) !important;
 
 		&:hover {
 			background-color: var(--secondary);
@@ -390,12 +387,12 @@ button,
 	}
 
 	&:hover {
-		background-color: var(--header-color);
-		color: var(--light-bg);
+		background-color: var(--header);
+		color: var(--background);
 	}
 
 	&:active {
-		background-color: var(--light-bg);
+		background-color: var(--background);
 	}
 
 	@media screen and (max-width: 480px) {
@@ -409,8 +406,8 @@ button,
 		color: #555;
 
 		&:hover {
-			background-color: var(--header-color);
-			color: var(--light-bg);
+			background-color: var(--header);
+			color: var(--background);
 			// background-color: var(--form-background);
 		}
 		&:active {
@@ -462,12 +459,13 @@ textarea {
 	}
 
 	&:disabled {
-		color: var(--header-color);
+		color: var(--header);
 	}
 }
 
 textarea {
 	padding: 0.75rem 1rem;
+	min-height: 150px;
 }
 
 input[type="checkbox"],
@@ -493,7 +491,7 @@ input[type="radio"] {
 		padding-right: 0.75rem;
 		position: relative;
 
-		color: var(--paragraph-color);
+		color: var(--paragraph);
 
 		&:before {
 			-moz-osx-font-smoothing: grayscale;
@@ -526,7 +524,7 @@ input[type="radio"] {
 
 				// background-color: var(--accent-1);
 				border-color: var(--primary);
-				color: var(--white);
+				// color: var(--white);
 
 			}
 		}
@@ -555,11 +553,11 @@ input[type="radio"]+label:before {
 :-ms-input-placeholder,
 .formerize-placeholder {
 	opacity: 1.0;
-	color: var(--gray-3) !important;
+	color: var(--sub) !important;
 }
 
 label {
-	color: var(--header-color);
+	color: var(--header);
 }
 
 input[type="text"],
@@ -576,7 +574,7 @@ textarea {
 	}
 
 	option {
-		color: var(--white);
+		color: var(--paragraph);
 		background: var(--form-background);
 	}
 }
@@ -777,7 +775,7 @@ header {
 		position: relative;
 		margin: 0 0 1.5rem 0;
 
-		color: var(--gray-3);
+		color: var(--sub);
 	}
 
 	h2+p {
@@ -819,7 +817,7 @@ table {
 		padding: 0 0.75rem 0.75rem 0.75rem;
 		text-align: left;
 
-		color: var(--header-color);
+		color: var(--header);
 	}
 
 	thead {
@@ -860,3 +858,5 @@ table {
 .box {
 	border-color: var(--form-border);
 }
+
+@import "../styles/vars.scss";
