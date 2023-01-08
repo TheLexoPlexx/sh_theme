@@ -323,6 +323,8 @@ button,
 	background-color: var(--form-background);
 	color: var(--paragraph); //!important
 
+	margin-right: 1rem;
+
 	--alt-box-shadow: inset 0 0 0 3px;
 
 	&:disabled {
