@@ -331,6 +331,11 @@ button,
 	&:disabled {
 		color: var(--sub);
 		cursor: not-allowed;
+		-moz-pointer-events: none;
+		-webkit-pointer-events: none;
+		-ms-pointer-events: none;
+		pointer-events: none;
+		opacity: 0.25;
 	}
 	
 	&.icon {
@@ -380,14 +385,6 @@ button,
 		&.alt {
 			box-shadow: var(--alt-box-shadow) var(--primary);
 		}
-	}
-
-	&:disabled {
-		-moz-pointer-events: none;
-		-webkit-pointer-events: none;
-		-ms-pointer-events: none;
-		pointer-events: none;
-		opacity: 0.25;
 	}
 
 	&:hover {
@@ -464,6 +461,8 @@ textarea {
 
 	&:disabled {
 		color: var(--header);
+		font-style: italic;
+		cursor: not-allowed;
 	}
 }
 
