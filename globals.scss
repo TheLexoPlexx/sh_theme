@@ -463,7 +463,7 @@ textarea {
 		box-shadow: none;
 	}
 
-	&:disabled {
+	&:disabled, &:read-only {
 		color: var(--header);
 		font-style: italic;
 		cursor: not-allowed;
