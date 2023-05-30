@@ -339,7 +339,7 @@ button,
 		opacity: 0.25;
 	}
 	
-	&.icon {
+	&.icon, &.icononly {
 		padding-left: 1.35rem;
 		vertical-align: middle;
 
@@ -356,6 +356,18 @@ button,
 			position: inherit;
 			margin-right: 0.15rem;
 			right: 0.2rem;
+		}
+	}
+	&.icononly {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		svg {
+			position: relative;
+			top: auto;
+			right: auto;
+			margin: 0;
 		}
 	}
 
@@ -541,18 +553,17 @@ input[type="password"],
 input[type="email"],
 select,
 textarea {
-	background: var(--form-background);
-	border-color: var(--form-border);
 	appearance: none;
 	border-radius: 2px;
 	border: none;
-	border: solid 1px;
 	color: inherit;
 	display: block;
 	outline: 0;
 	padding: 0 1rem;
 	text-decoration: none;
 	width: 100%;
+	background: var(--form-background);
+	border: solid 1px var(--form-border);
 	
 	height: 2.75rem;
 
@@ -560,10 +571,14 @@ textarea {
 		box-shadow: none;
 	}
 
-	&:disabled, &:read-only {
+	&:disabled {
 		color: var(--header);
 		font-style: italic;
 		cursor: not-allowed;
+	}
+
+	&:read-only {
+		color: var(--header);
 	}
 
 	&:focus {
