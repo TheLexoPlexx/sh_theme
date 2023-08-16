@@ -243,7 +243,6 @@ blockquote {
 }
 
 code {
-	border-radius: 2px;
 	border: solid 1px;
 	font-family: "Courier New", monospace;
 	font-size: 0.9rem;
@@ -310,7 +309,6 @@ button,
 	-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	border-radius: 2px;
 	border: 0;
 	cursor: pointer;
 	display: inline-block;
@@ -485,7 +483,6 @@ input[type="radio"] {
 			-webkit-font-smoothing: antialiased;
 			text-transform: none !important;
 
-			border-radius: 2px;
 			border: solid 1px;
 			content: '';
 			display: inline-block;
@@ -528,7 +525,6 @@ input[type="radio"] {
 }
 
 input[type="checkbox"]+label:before {
-	border-radius: 2px;
 }
 
 input[type="radio"]+label:before {
@@ -550,7 +546,6 @@ select,
 textarea,
 .inputLike {
 	appearance: none;
-	border-radius: 2px;
 	border: none;
 	color: inherit;
 	display: block;
