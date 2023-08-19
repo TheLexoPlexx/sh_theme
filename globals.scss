@@ -441,7 +441,7 @@ form {
 	margin: 0 0 2rem 0;
 	hr {
 		border-bottom: solid 1px var(--sub);
-		margin: 0.2rem 0 1.5rem 0
+		margin: 0.4rem 0
 	}
 }
 
@@ -524,9 +524,6 @@ input[type="radio"] {
 	}
 }
 
-input[type="checkbox"]+label:before {
-}
-
 input[type="radio"]+label:before {
 	border-radius: 100%;
 }
@@ -542,6 +539,8 @@ input[type="radio"]+label:before {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="number"],
+input[type="date"],
 select,
 textarea,
 .inputLike {
